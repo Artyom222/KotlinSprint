@@ -1,7 +1,7 @@
 package lesson_2
 const val MINUTE_IN_HOUR = 60
 
-fun main(){
+fun main() {
     val departureHour = 9
     val departureMinute = 39
     val travelTimeMinute = 457
