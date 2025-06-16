@@ -6,8 +6,9 @@ fun main() {
     val firstName = "Татьяна"
     val middleName = "Сергеевна"
     val ageAtMarriage = 22
+    val ageAny = 20
 
-    println("$oldSurname $firstName $middleName, 20 лет")
+    println("$oldSurname $firstName $middleName, $ageAny лет")
     println("$newSurname $firstName $middleName, $ageAtMarriage года")
 
 }
