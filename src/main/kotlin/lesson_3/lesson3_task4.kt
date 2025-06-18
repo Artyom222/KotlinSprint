@@ -1,15 +1,14 @@
 package lesson_3
 
 fun main() {
-    var fromWhere = "E2"
-    var toWhere = "E4"
-    var moveNumber = "1"
-    var moveString = "$fromWhere - $toWhere; $moveNumber"
-    println("[$moveString]")
-    fromWhere = "D2"
-    toWhere = "D3"
-    moveNumber = "2"
-    moveString = "$fromWhere - $toWhere; $moveNumber"
-    println("[$moveString]")
+    var from = "E2"
+    var to = "E4"
+    var moveNumber = 1
+    println("[$from-$to;$moveNumber]")
+    println()
+    from = "D2"
+    to = "D3"
+    moveNumber = 2
+    println("[$from-$to;$moveNumber]")
 
 }
