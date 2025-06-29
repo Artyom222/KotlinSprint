@@ -23,7 +23,7 @@ fun main() {
             ) || (
             hasDamage &&
             crewCount == MAX_CREW_COUNT &&
-            foodBoxes > MIN_FOOD_BOX &&
+            foodBoxes >= MIN_FOOD_BOX &&
             isWeatherGood
             )
     println("Готовность коробля к отплытию: $canSail")
