@@ -1,10 +1,8 @@
 package org.example.lesson_5
 
-import kotlin.random.Random
-
 fun main() {
-    val number1 = Random.nextInt(0, 42)
-    val number2 = Random.nextInt(0, 42)
+    val number1 = (0..42).random()
+    val number2 = (0..42).random()
 
     println("Введите 2 числа от 0 до 42:")
     val userNumber1 = readln().toInt()
