@@ -3,14 +3,10 @@ package org.example.lesson_5
 const val LOTTERY_SIZE = 3
 
 fun main() {
-    val lotteryNumbers = mutableListOf<Int>()
-    for (i in 0 until LOTTERY_SIZE)
-        lotteryNumbers.add((0..42).random())
+    val lotteryNumbers = List(LOTTERY_SIZE) { (0..42).random() }
 
     println("Введите 3 числа от 0 до 42:")
-    val userNumbers = mutableListOf<Int>()
-    for (i in 0 until LOTTERY_SIZE)
-        userNumbers.add(readln().toInt())
+    val userNumbers = List(LOTTERY_SIZE) { readln().toInt() }
 
     val matches = lotteryNumbers.intersect(userNumbers).size
     when (matches) {
