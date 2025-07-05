@@ -10,4 +10,5 @@ fun main() {
         Thread.sleep(SECONDS_IN_MILLIS)
     }
     println("Время вышло")
+
 }
