@@ -2,15 +2,16 @@ package org.example.lesson_7
 
 fun main() {
     val passwordSize = 6
+    val digits = '0'..'9'
+    val letters = 'a'..'z'
+    var password = ""
 
     for (i in 0 until passwordSize) {
-        val passwordPart: Char
         if (i % 2 == 0) {
-            passwordPart = ('a'..'z').random()
-            print(passwordPart)
+            password = password + letters.random()
         } else {
-            passwordPart = ('0'..'9').random()
-            print(passwordPart)
+            password = password + digits.random()
         }
     }
+    print(password)
 }
