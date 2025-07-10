@@ -5,9 +5,7 @@ fun main() {
     print("Какой ингридиент найти? ")
     val searchIngredient = readln()
 
-    val isSuccess = ingredients.contains(searchIngredient)
-
-    if (isSuccess) {
+    if (searchIngredient in ingredients) {
         println("Ингредиент $searchIngredient в рецепте есть")
     } else {
         println("Такого ингредиента в рецепте нет")
