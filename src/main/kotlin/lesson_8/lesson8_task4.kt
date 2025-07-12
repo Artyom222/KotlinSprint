@@ -6,14 +6,13 @@ fun main() {
 
     print("Какой ингридиент вы хотите заменить? ")
     val editIngredient = readln()
+    val index = ingredients.indexOf(editIngredient)
 
-    if (editIngredient in ingredients) {
+    if (index != -1) {
         print("Какой ингридиент вы хотите добавить? ")
-        val newIngredient = readln()
-        ingredients[ingredients.indexOf(editIngredient)] = newIngredient
+        ingredients[index] = readln()
         println("Готово! Вы сохранили следующий список: ${ingredients.contentToString()}")
     } else {
         println("Такого ингредиента нет")
     }
-
 }
