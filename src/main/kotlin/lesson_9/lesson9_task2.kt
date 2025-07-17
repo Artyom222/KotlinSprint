@@ -10,7 +10,7 @@ fun main() {
     if (answer.equals("да", true )) {
         println("Какой ингредиент вы хотите добавить?")
         val newIngredient = readln()
-        val newListIngredients = baseListIngredients + newIngredient
-        println("Теперь в рецепте есть следующие ингредиенты: ${newListIngredients.toString()}")
+        baseListIngredients.add(newIngredient)
+        println("Теперь в рецепте есть следующие ингредиенты: ${baseListIngredients.toString()}")
     }
 }
