@@ -2,21 +2,21 @@ package org.example.lesson_10
 
 fun main() {
     println("Ход игрока:")
-    val humanPoint = rollDice()
+    val humanPoint = rollDice1()
 
     println("Ход компьютера:")
-    val computerPoint = rollDice()
+    val computerPoint = rollDice1()
 
-    resultGame(humanPoint, computerPoint)
+    resultGame1(humanPoint, computerPoint)
 }
 
-fun rollDice(): Int {
+fun rollDice1(): Int {
     val number = (1..6).random()
     println("На кубике выпало число $number")
     return number
 }
 
-fun resultGame(humanPoint: Int, computerPoint: Int) {
+fun resultGame1(humanPoint: Int, computerPoint: Int) {
     if (humanPoint > computerPoint) {
         println("Победило человечество")
     } else if (humanPoint < computerPoint) {
