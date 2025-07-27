@@ -1,6 +1,6 @@
 package org.example.lesson_11
 
-class User(
+class User4(
     val id: Int,
     val login: String,
     val password: String,
@@ -8,14 +8,14 @@ class User(
 )
 
 fun main() {
-    val user1 = User(
+    val user41 = User4(
         id = 1,
         login = "Oleg",
         password = "qwerty!",
         email = "123@mail.ru"
     )
 
-    val user2 = User(
+    val user42 = User4(
         id = 2,
         login = "Pro100",
         password = "123321",
@@ -24,19 +24,19 @@ fun main() {
 
     println("""
         Данные user1
-        id: ${user1.id}
-        login: ${user1.login}
-        password: ${user1.password}
-        email: ${user1.email}
+        id: ${user41.id}
+        login: ${user41.login}
+        password: ${user41.password}
+        email: ${user41.email}
     """.trimIndent())
 
     println()
     println("""
         Данные user2
-        id: ${user2.id}
-        login: ${user2.login}
-        password: ${user2.password}
-        email: ${user2.email}
+        id: ${user42.id}
+        login: ${user42.login}
+        password: ${user42.password}
+        email: ${user42.email}
     """.trimIndent())
 
 }
