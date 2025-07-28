@@ -4,41 +4,20 @@ class Forum {
     val users = mutableListOf<User>()
     val messages = mutableListOf<Message>()
 
-    class User(
-        val userId: Int,
-        val userName: String,
-    ) {
-        class Builder(val forum: Forum) {
-            fun build(userName: String): User {
-                val newId = forum.users.size + 1
-                val newUser = User(newId, userName)
-                forum.users.add(newUser)
-                return newUser
-            }
-        }
-    }
-    class Message(
-        val authorId: Int,
-        val message: String,
-    ) {
-        class Builder(val forum: Forum) {
-            fun build(authorId: Int, message: String): Message? {
-                if (forum.users.any { it.userId == authorId }) {
-                    val newMessage = Message(authorId, message)
-                    forum.messages.add(newMessage)
-                    return newMessage
-                }
-                return null
-            }
-        }
-    }
-
     fun createNewUser(userName: String): User {
-        return User.Builder(this).build(userName)
+        val newId = users.size + 1
+        val newUser = User(newId, userName)
+        users.add(newUser)
+        return newUser
     }
 
     fun createNewMessage(authorId: Int, message: String): Message? {
-        return Message.Builder(this).build(authorId,message)
+        if (users.any { it.userId == authorId }) {
+            val newMessage = Message(authorId, message)
+            messages.add(newMessage)
+            return newMessage
+        }
+        return null
     }
 
     fun printThread() {
@@ -48,6 +27,16 @@ class Forum {
         }
     }
 }
+
+class User(
+    val userId: Int,
+    val userName: String,
+) {}
+
+class Message(
+    val authorId: Int,
+    val message: String,
+) {}
 
 fun main() {
     val forum = Forum()
@@ -61,7 +50,4 @@ fun main() {
     forum.createNewMessage(user2.userId, "Нормально")
 
     forum.printThread()
-
 }
-
-
