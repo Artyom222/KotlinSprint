@@ -2,10 +2,10 @@ package org.example.lessson_12
 
 const val KELVIN_TO_CELSIUS = 273
 
-class WeatherDataKelvin(kelvinDay: Int, kelvinNight: Int,) {
-    var dayTemp = kelvinDay - KELVIN_TO_CELSIUS
-    var nightTemp = kelvinNight - KELVIN_TO_CELSIUS
-    var hasPrecipitation: Boolean = false
+class WeatherDataKelvin(kelvinDay: Int, kelvinNight: Int) {
+    val dayTemp = kelvinDay - KELVIN_TO_CELSIUS
+    val nightTemp = kelvinNight - KELVIN_TO_CELSIUS
+    val hasPrecipitation: Boolean = false
 
     fun printWeatherCelsius() {
         println(
@@ -20,9 +20,8 @@ class WeatherDataKelvin(kelvinDay: Int, kelvinNight: Int,) {
 }
 
 fun main() {
-    val weatherDay1 = WeatherDataKelvin(300,290)
-    val weatherDay2 = WeatherDataKelvin(275,260)
-
+    val weatherDay1 = WeatherDataKelvin(300, 290)
+    val weatherDay2 = WeatherDataKelvin(275, 260)
 
     weatherDay1.printWeatherCelsius()
     weatherDay2.printWeatherCelsius()
