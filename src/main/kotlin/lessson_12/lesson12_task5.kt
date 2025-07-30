@@ -1,10 +1,12 @@
 package org.example.lessson_12
 
+import kotlin.random.Random
+
 class DayWeatherData(
-    var dayTemp: Int,
-    var nightTemp: Int,
-    var hasPrecipitation: Boolean,
-) {}
+    val dayTemp: Int,
+    val nightTemp: Int,
+    val hasPrecipitation: Boolean,
+)
 
 fun main() {
     val daysCount = 30
@@ -13,7 +15,7 @@ fun main() {
     repeat(daysCount) {
         val dayTemp = (15..30).random()
         val nightTemp = (5..20).random()
-        val hasPrecipitation = listOf(true, false).random()
+        val hasPrecipitation = Random.nextBoolean()
         val weather = DayWeatherData(dayTemp, nightTemp, hasPrecipitation)
         weatherDays.add(weather)
     }
