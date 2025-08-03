@@ -1,7 +1,5 @@
 package org.example.lesson_13
 
-import kotlin.collections.mutableListOf
-
 class PhoneContact1(
     val name: String,
     val phoneNumber: Long,
@@ -14,8 +12,14 @@ class PhoneContact1(
 
 fun main() {
     val phoneBook = mutableListOf<PhoneContact1>()
+    var more = "да"
 
-    inputContact(phoneBook)
+    while (more == "да") {
+        inputContact(phoneBook)
+        print("Продолжить ввод контактов? (да/нет)")
+        more = readln()
+    }
+    println("//-----------------//")
     phoneBook.forEach { it.printContact() }
 }
 
