@@ -13,10 +13,12 @@ class PhoneContact(
 fun main() {
     val phoneBook = listOf<PhoneContact>(
         PhoneContact("Alex", 8684646, "null"),
-        PhoneContact("Gleb", 848684666, "google"),
+        PhoneContact("Gleb", 848684666, "MTS"),
         PhoneContact("Bill", 68646532),
         PhoneContact("Genadiy", 9468468455126),
         PhoneContact("ElBek", 789845264646, "MTS"),
     )
-    println("Список всех компаний: ${phoneBook.map { it.company }}")
+    val companys = (phoneBook.mapNotNull { it.company }).distinct()
+
+    println("Список всех компаний: $companys")
 }
