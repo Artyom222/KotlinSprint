@@ -18,5 +18,5 @@ fun main() {
         PhoneContact("Genadiy", 9468468455126),
         PhoneContact("ElBek", 789845264646, "MTS"),
     )
-    phoneBook.forEach { it.printContact() }
+    println("Список всех компаний: ${phoneBook.map { it.company }}")
 }
