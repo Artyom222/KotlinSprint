@@ -2,13 +2,13 @@ package org.example.lesson_15
 
 interface Swimmable {
     fun swim() {
-        println("(${javaClass.simpleName})Я могу плавать!")
+        println("${javaClass.simpleName}: Я могу плавать!")
     }
 }
 
 interface Flyable {
     fun fly() {
-        println("(${javaClass.simpleName})Я могу летать!")
+        println("${javaClass.simpleName}: Я могу летать!")
     }
 }
 
