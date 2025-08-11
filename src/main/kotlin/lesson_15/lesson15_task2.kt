@@ -34,5 +34,4 @@ fun main() {
     server.sendData(tempData)
     server.sendData(precipData)
 
-
 }
