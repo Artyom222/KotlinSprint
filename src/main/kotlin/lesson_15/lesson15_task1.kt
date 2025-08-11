@@ -1,22 +1,38 @@
 package org.example.lesson_15
 
 interface Swimmable {
-    fun swim() {
-        println("${javaClass.simpleName}: Я могу плавать!")
-    }
+    fun swim()
 }
 
 interface Flyable {
-    fun fly() {
-        println("${javaClass.simpleName}: Я могу летать!")
+    fun fly()
+}
+
+class Crucian : Swimmable {
+    override fun swim() {
+        println("Карась плавает")
     }
 }
 
-class Crucian : Swimmable
+class Seagull : Flyable, Swimmable {
+    override fun fly() {
+        println("Чайка летает")
+    }
 
-class Seagull : Flyable, Swimmable
+    override fun swim() {
+        println("Чайка плавает")
+    }
+}
 
-class Duck : Flyable, Swimmable
+class Duck : Flyable, Swimmable {
+    override fun fly() {
+        println("Утка летает")
+    }
+
+    override fun swim() {
+        println("Утка плавает")
+    }
+}
 
 fun main() {
     val crucian = Crucian()
@@ -30,7 +46,3 @@ fun main() {
     duck.swim()
 
 }
-
-
-
-
