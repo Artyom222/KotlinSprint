@@ -18,23 +18,15 @@ class Instrument(
     stockQuantity: Int,
 ) : MusicStoreProduct(name, stockQuantity), Searchable {
 
-    fun searchAccessories() {
-        println("Выполняется поиск комплектующих для инструмента $name")
-    }
-
     override fun search() {
-        println("Выполняется поиск")
+        println("Выполняется поиск комплектующих для инструмента $name")
     }
 }
 
 class Accessory(
     name: String,
     stockQuantity: Int,
-) : MusicStoreProduct(name, stockQuantity), Searchable {
-    override fun search() {
-        println("Выполняется поиск")
-    }
-}
+) : MusicStoreProduct(name, stockQuantity)
 
 fun main() {
     val guitar = Instrument("Гитара Yamaha", 3)
@@ -45,6 +37,5 @@ fun main() {
     drums.displayInfo()
     strings.displayInfo()
     guitar.search()
-    guitar.searchAccessories()
 
 }
