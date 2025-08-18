@@ -10,11 +10,7 @@ class QuizQuestion(
     var answer = answer
         get() = field
         set(value) {
-            if (value == field) {
-                println("Правильный ответ!")
-            } else {
-                println("Неверный ответ")
-            }
+            field = value
         }
 }
 
@@ -22,5 +18,7 @@ fun main() {
     val question = QuizQuestion("В каком году было изобретено радио А. Поповым?", "1895")
 
     println("Вопрос: ${question.question}")
+    println("Ответ: ${question.answer}")
     question.answer = readln()
+    println("Ответ: ${question.answer}")
 }
