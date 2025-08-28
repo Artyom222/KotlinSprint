@@ -1,20 +1,21 @@
 package org.example.lesson_19
 
-enum class ProductCategory {
-    CLOTHING {
-        override fun getName(): String = "Одежда"
-    },
-    STATIONERY {
-        override fun getName(): String = "Канцелярские товары"
-    },
-    MISCELLANEOUS {
-        override fun getName(): String = "Разное"
-    },
-    ERROR {
-        override fun getName(): String = "Ошибка"
-    };
+enum class ProductCategory(val categoryId: Int) {
+    CLOTHING(1),
+    STATIONERY(2),
+    MISCELLANEOUS(3),
+    ERROR(0);
 
-    abstract fun getName(): String
+    companion object {
+        fun getName(categoryId: Int): String {
+            return when (categoryId) {
+                CLOTHING.categoryId -> "Одежда"
+                STATIONERY.categoryId -> "Канцелярские товары"
+                MISCELLANEOUS.categoryId -> "Разное"
+                else -> "Ошибка"
+            }
+        }
+    }
 }
 
 class Product(
@@ -23,16 +24,7 @@ class Product(
     val categoryId: Int,
 ) {
     fun getInfo() {
-        println("Имя: $name, id: $id, категория: ${identifyCategory(categoryId)}")
-    }
-
-    fun identifyCategory(categoryId: Int): String {
-        return when (categoryId) {
-            1 -> ProductCategory.CLOTHING.getName()
-            2 -> ProductCategory.STATIONERY.getName()
-            3 -> ProductCategory.MISCELLANEOUS.getName()
-            else -> ProductCategory.ERROR.getName()
-        }
+        println("Имя: $name, id: $id, категория: ${ProductCategory.getName(categoryId)}")
     }
 }
 
