@@ -1,38 +1,34 @@
 package org.example.lesson_19
 
-enum class ProductCategory(val categoryId: Int) {
-    CLOTHING(1),
-    STATIONERY(2),
-    MISCELLANEOUS(3),
-    ERROR(0);
+enum class ProductCategory() {
+    CLOTHING,
+    STATIONERY,
+    MISCELLANEOUS,
+    ERROR;
 
-    companion object {
-        fun getName(categoryId: Int): String {
-            return when (categoryId) {
-                CLOTHING.categoryId -> "Одежда"
-                STATIONERY.categoryId -> "Канцелярские товары"
-                MISCELLANEOUS.categoryId -> "Разное"
-                else -> "Ошибка"
-            }
-        }
+    fun getCategoryName() = when(this) {
+        CLOTHING -> "Одежда"
+        STATIONERY -> "Канцелярские товары"
+        MISCELLANEOUS -> "Разное"
+        ERROR -> "Ошибка"
     }
 }
 
 class Product(
     val name: String,
     val id: Int,
-    val categoryId: Int,
+    val category: ProductCategory,
 ) {
     fun getInfo() {
-        println("Имя: $name, id: $id, категория: ${ProductCategory.getName(categoryId)}")
+        println("Имя: $name, id: $id, категория: ${category.getCategoryName()}")
     }
 }
 
 fun main() {
-    val shirt = Product("Рубашка", 1, 1)
-    val jacket = Product("Жакет", 2, 1)
-    val scissors = Product("Ножницы", 3, 2)
-    val candle = Product("Свеча", 4, 3)
+    val shirt = Product("Рубашка", 1, ProductCategory.CLOTHING)
+    val jacket = Product("Жакет", 2, ProductCategory.CLOTHING)
+    val scissors = Product("Ножницы", 3, ProductCategory.STATIONERY)
+    val candle = Product("Свеча", 4, ProductCategory.MISCELLANEOUS)
 
     shirt.getInfo()
     jacket.getInfo()
