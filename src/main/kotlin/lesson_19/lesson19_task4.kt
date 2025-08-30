@@ -5,13 +5,11 @@ class Tank(
     val mass: Int,
     val maxSpeed: Int,
     val armorThickness: Int,
-    var ammoCount: Int,
     var tankAmmo: Ammo? = null,
 ) {
     fun shot() {
         if (tankAmmo != null) {
             println("Выстрел снарядом ${tankAmmo!!.color}.\nНанесено ${tankAmmo!!.damage} урона")
-            ammoCount--
         } else {
             println("Ошибка! Нет снаряда!")
         }
@@ -19,7 +17,6 @@ class Tank(
 
     fun equipAmmo(ammo: Ammo) {
         println("Вы подобрали снаряд: ${ammo.color}")
-        ammoCount++
         tankAmmo = ammo
     }
 }
@@ -34,7 +31,7 @@ enum class Ammo(
 }
 
 fun main() {
-    val tank = Tank("T-90", 3000, 25, 30, 0)
+    val tank = Tank("T-90", 3000, 25, 30)
 
     tank.shot()
     tank.equipAmmo(Ammo.BLUE)
