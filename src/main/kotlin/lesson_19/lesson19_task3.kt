@@ -3,7 +3,7 @@ package org.example.lesson_19
 class SpaceShip {
     fun takeOff() {
         println("Космический корабль взлетает")
-        // TODO: Реализовать логику взлета с проверкой топлива и систем
+        TODO("Implement takeOff logic")
     }
 
     fun shootAsteroid() {
