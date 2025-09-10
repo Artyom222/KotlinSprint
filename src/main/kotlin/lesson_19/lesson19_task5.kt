@@ -10,6 +10,13 @@ class Human(
 enum class Gender(val translate: String) {
     MALE("мужской"),
     FEMALE("женский"),
+    ERROR("Ошибка");
+
+    fun getGender(inputGender: String) = when (inputGender.lowercase()) {
+        "мужской" -> MALE
+        "женский" -> FEMALE
+        else -> ERROR
+    }
 }
 
 fun main() {
@@ -22,18 +29,16 @@ fun main() {
         print("Имя:")
         val name = readln()
         print("Пол:")
-        val gender: Gender = when (readln()) {
-            "мужской" -> Gender.MALE
-            "женский" -> Gender.FEMALE
-            else -> {
-                println("Такого пола нет, введите заново")
-                continue
-            }
+        var gender = Gender.ERROR
+        gender = gender.getGender(readln())
+        if (gender == Gender.ERROR) {
+            println("Такого пола нет, введите заново")
+            continue
         }
         listOfPeople.add(Human(name, gender))
         countOfPeople++
+        println("Имя записано")
     }
-
     println("---Картотека---")
     listOfPeople.forEach {
         println("Имя: ${it.name} пол: ${it.gender.translate}")
