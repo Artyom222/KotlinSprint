@@ -9,7 +9,7 @@ fun main() {
     val max = Player1("Max", false)
 
     val tryOpenDoor: (Player1) -> String = { player: Player1 ->
-        if (player.haveKey == true) {
+        if (player.haveKey) {
             "Игрок открыл дверь"
         } else {
             "Дверь заперта"
