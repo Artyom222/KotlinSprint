@@ -7,8 +7,8 @@ data class Player3(
 )
 
 fun main() {
-    val player3 = Player3("Max100",120,80)
-    val (name,maxHealth,nowHealth) = player3
+    val player3 = Player3("Max100", 120, 80)
+    val (name, maxHealth, nowHealth) = player3
 
     println(player3)
     println(name)
