@@ -15,10 +15,8 @@ fun main() {
         4.3
     )
 
-    val (name, description, dateTime, distance) = alphaCentauri
-
-    println("Название: $name")
-    println("Описание: $description")
-    println("Дата и время: $dateTime")
-    println("Расстояние: $distance световых лет")
+    println("Название: ${alphaCentauri.component1()}")
+    println("Описание: ${alphaCentauri.component2()}")
+    println("Дата и время: ${alphaCentauri.component3()}")
+    println("Расстояние: ${alphaCentauri.component4()} световых лет")
 }
